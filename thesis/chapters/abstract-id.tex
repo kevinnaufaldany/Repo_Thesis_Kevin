@@ -1,0 +1,21 @@
+\clearpage
+\phantomsection% 
+\addcontentsline{toc}{chapter}{ABSTRAK}
+\thispagestyle{fancy}
+
+\begin{center}
+	\large \bfseries \MakeUppercase{Abstrak}\\
+	% \normalsize \normalfont {\thetitle}\\
+	% \normalsize \normalfont {\theauthor}\\
+	\bigskip
+	
+	\normalsize \normalfont \justifying \singlespacing
+	Identifikasi mineral kasiterit di Laboratorium Eksplorasi PT. Timah Tbk. saat ini masih mengandalkan metode konvensional \textit{Grain Counting Analysis} (GCA) yang dilakukan secara manual menggunakan mikroskop. Metode ini memiliki keterbatasan seperti memerlukan waktu yang lama, bersifat subjektif, dan rentan terhadap kelelahan visual yang menyebabkan tidak konsistennya perhitungan. Penelitian ini bertujuan untuk merancang dan mengembangkan model identifikasi berbasis \textit{Mask} R-CNN yang dapat melakukan segmentasi mineral kasiterit menggunakan dengan teknik \textit{amodal instance segmentation} yang mampu mengatasi permasalahan oklusi antar butir mineral pada citra mikroskop. Pemilihan \textit{Mask} R-CNN didasarkan pada kemampuannya dalam melakukan deteksi dan \textit{instance segmentation} secara presisi pada citra berlatar belakang kompleks, sementara pendekatan \textit{amodal} memungkinkan model memprediksi bentuk utuh objek meskipun sebagian tertutup. Dataset yang digunakan terdiri dari 142 citra mikroskop trinokuler dari Laboratorium Eksplorasi PT. Timah Tbk. yang dianotasi dan divalidasi oleh salah satu tim analis Laboratorium Eksplorasi PT. Timah Tbk. Penelitian ini melatih dua model \textit{pre-trained} \textit{Mask} R-CNN ResNet50 FPN V1 dan V2, dengan dua jenis model \textit{standard} dan \textit{amodal} serta dua variasi \textit{optimizer} SGD dan \textit{Adam}. Evaluasi kinerja model dilakukan menggunakan metrik \textit{Average Precision} (AP) dan \textit{Intersection over Union} (IoU) melalui skema \textit{k-fold cross validation}. Hasil penelitian menunjukkan bahwa model \textit{pre-trained Mask} R-CNN ResNet50 FPN V1 dengan pendekatan \textit{amodal} dan \textit{optimizer Adam} memberikan performa terbaik dengan nilai \APrangefiftyy sebesar 0{,}458 dan \IoUrangefiftyy sebesar 0{,}915, yang menunjukkan kemampuannya dalam melakukan deteksi dan segmentasi kasiterit secara akurat meskipun terjadi oklusi antar butir mineral. Hasil pengujian menunjukkan bahwa model \textit{amodal} Mask R-CNN ResNet50 FPN V1 dengan \textit{optimizer Adam} menghasilkan performa segmentasi yang lebih baik dengan nilai \IoUrangefiftyy yang tinggi dan konsisten, serta hasil prediksi dengan nilai \APrangefiftyy yang stabil, sementara konfigurasi lain masih menunjukkan kecenderungan \textit{overprediction}, terutama pada kondisi oklusi. Penelitian ini menunjukkan bahwa penerapan pendekatan \textit{amodal instance segmentation} terbukti efektif dan andal untuk identifikasi mineral kasiterit pada citra mikroskop dengan tingkat oklusi yang kompleks. \par
+
+    \vspace{20pt}
+	\raggedright \textbf{Kata Kunci: Identifikasi Mineral, Kasiterit, \textit{Mask} R-CNN, \textit{Amodal Instance Segmentation}, Citra Mikroskop}
+	
+	\vfill
+	
+\end{center}
+\clearpage

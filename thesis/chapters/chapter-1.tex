@@ -1,0 +1,76 @@
+\newpage
+
+\chapter{PENDAHULUAN} \label{Bab I}
+
+\section{Latar Belakang} \label{I.Latar Belakang}
+Indonesia merupakan salah satu negara yang memiliki kekayaan sumber daya mineral yang melimpah, salah satunya adalah timah \cite{PurificationCassiterite4}. Secara historis, Indonesia telah dikenal sebagai produsen timah terbesar di dunia sejak awal abad ke-20 dengan kontribusi yang signifikan terhadap pasar global \cite{IrzonTimahIndonesia12}. Timah (Sn) adalah unsur kimia yang ditemukan dalam bentuk mineral di alam, terutama dalam bentuk kasiterit (\senyawatin) yang merupakan sumber utama timah \cite{IrzonTimahIndonesia12}. Pemanfaatan sumber daya mineral ini memerlukan penerapan metode dan teknologi yang efektif untuk memperoleh hasil yang optimal, menekan biaya produksi, serta memastikan proses yang ramah lingkungan \cite{PurificationCassiterite4}. \par
+
+Kasiterit merupakan mineral utama pembentuk timah yang secara teoritis mengandung 78\% timah, namun karena jarang ditemukan dalam bentuk murni, maka kandungan timahnya hanya sekitar 73–75\% \cite{bookTin} \cite{PurificationCassiterite4}. Wilayah penghasil kasiterit di Indonesia tersebar terutama di Bangka, Belitung, Kundur, Singkep, Karimun, dan Kampar \cite{PurificationCassiterite4}. Pada wilayah-wilayah tersebut, kasiterit umumnya hadir bersama mineral ikutan seperti ilmenit, pasir kuarsa, zirkon, rutil, pirit, kalsit, lantanum, dan monasit, yang menjadi tantangan dalam proses pemisahan untuk memperoleh mineral kasiterit dengan tingkat kemurnian yang tinggi \cite{PurificationCassiterite4} \cite{IrzonTimahIndonesia12}. \par
+
+Salah satu metode identifikasi untuk memperoleh mineral kasiterit adalah metode  \textit{Grain Counting Analysis (GCA)}. GCA merupakan pendekatan konvensional yang digunakan untuk menganalisis jumlah butiran mineral pada sampel guna mengetahui distribusi relatif antara mineral utama dan mineral ikutan \cite{KajianPTTimah6}. Proses ini dilakukan secara manual di bawah mikroskop binokuler, di mana seorang analis menghitung butiran mineral satu per satu berdasarkan pengamatan visual \cite{KajianPTTimah6}. Meskipun metode ini telah lama diterapkan dalam kegiatan eksplorasi mineral, penggunaan mikroskop secara intensif dan berulang berpotensi menimbulkan kelelahan visual (\textit{eye fatigue}), gangguan muskuloskeletal, serta menurunkan konsentrasi kerja, sehingga berdampak pada akurasi dan konsistensi hasil analisis \cite{VisualTrain8} \cite{ConcernAssociated7}. \par
+
+PT. Timah Tbk. merupakan perusahaan pertambangan timah terbesar di Indonesia yang memiliki peran penting dalam kegiatan eksplorasi, penambangan, dan pengolahan bijih timah \cite{PTTimahWebsite}. Saat ini, proses identifikasi dan analisis kuantitatif mineral kasiterit di Laboratorium Eksplorasi PT. Timah Tbk., masih mengandalkan metode GCA. Berdasarkan hasil wawancara pada tanggal 13 Agustus 2025 dengan Bapak Mesa Madestriasa selaku Kepala Laboratorium Eksplorasi PT. Timah Tbk., diketahui bahwa metode ini memiliki sejumlah keterbatasan, terutama berkaitan dengan subjektivitas analis. Satu sampel yang sama dapat dihitung berulang kali dan menghasilkan estimasi yang berbeda, karena sangat bergantung pada ketelitian serta konsistensi analis dalam melakukan pengamatan di bawah mikroskop. Hal ini menimbulkan kekhawatiran akan kemungkinan terjadinya subjektif oleh analis. Adapun salah satu solusi untuk menangani masalah komputasional karena keterbatasan metode konvesional adalah dengan menggunakan pendekatan berbasis teknologi yang mengidentifikasi mineral pada citra mikroskop menggunakan  \textit{deep learning} \cite{ImprovedMaskRCNNOrePanggangan}. \par
+
+Pada beberapa tahun terakhir, \textit{deep learning} berbasis \textit{Convolutional Neural Network} (CNN) terbukti efektif dalam berbagai bidang, khususnya model berbasis \textit{Mask Region-based Convolutional Neural Network} (\textit{Mask} R-CNN) yang mampu melakukan deteksi dan \textit{instance segmentation} secara andal pada citra berlatar belakang kompleks \cite{OreSegmentation2} \cite{ImprovedMaskRCNNOrePanggangan}. Beberapa penelitan sebelumnya telah berhasil menerapkan berbagai model untuk identifikasi objek geologis. Seperti penelitian dari penelitian oleh K. Tang, \textit{et al} pada tahun 2025 mengusulkan perbaikan \textit{Mask} R-CNN untuk segmentasi bijih \textit{polymetallic} untuk meningkatkan ketelitian segmentasi pada citra bijih yang mencapai \textit{Mean Intersection over Union} (MIoU) 92,8\% dan \textit{Mean Average Precision} (mAP) 97,2\% yang lebih tinggi daripada Mask R-CNN standar MIoU 85,88\% dan mAP 92,10\% \cite{OreSegmentation2}. Sementara itu, penelitian yang lebih spesifik oleh M.R. Iyas, N.I. Setiawan, dan I.W. Warmada pada tahun 2020 pada mikroskopi petrografi menerapkan Mask R-CNN untuk identifikasi mineral pembentuk batuan dan menunjukkan bahwa model terbaik adalah Model B (ResNet-101 + pencahayaan) dengan \textit{Average Precision} (AP) 58,0\% sebagai yang terbaik, mengungguli Model A (57,8\%), Model C (45,8\%), dan Model D (43,6\%), serta bahwa pencahayaan mikroskop meningkatkan performa sekitar 12–14,4\%  \cite{maskrcnnKalimantanMic}. \par
+
+Seiring dengan perkembangan tersebut, penelitian ini berfokus pada penerapan model \textit{deep learning}, yaitu \textit{Mask} R-CNN. \textit{Mask} R-CNN merupakan model \textit{instance segmentation} yang tidak hanya mampu mendeteksi dan mengklasifikasikan objek, tetapi juga dapat menghasilkan masker piksel yang presisi untuk setiap butir mineral kasiterit yang terdeteksi \cite{MaskRcnnIEEE11}. \textit{Instance segmentation} merupakan teknik \textit{computer vision} tingkat lanjut yang mengidentifikasi dan mengklasifikasikan setiap objek individu pada tingkat piksel guna memberikan pemahaman komposisi visual yang mendalam dan akurat. Berbeda dengan deteksi objek yang hanya menggunakan kotak pembatas (\textit{bounding box}) untuk lokalisasi, \textit{instance segmentation} mampu menentukan batas setiap objek secara presisi melalui masker piksel, sehingga sangat krusial untuk mencapai lokalisasi yang akurat pada objek-objek berukuran kecil dalam citra yang kompleks \cite{segmentasi-deteksiobjek}. Pendekatan ini sangat sesuai untuk analisis citra mikroskop dalam mendeteksi setiap butir mineral kasiterit, di mana butir-butir mineral sering kali saling tumpang tindih (\textit{occluded}). 
+
+Fenomena tumpang tindih antarobjek (\textit{occlusion}) merupakan kondisi ketika sebagian area objek tertutup oleh objek lain sehingga informasi bentuk yang terlihat pada citra menjadi tidak utuh. Kondisi ini menyulitkan model dalam mempelajari representasi morfologi butir mineral secara konsisten dan berpotensi menurunkan akurasi segmentasi. Meskipun \textit{Mask} R-CNN memiliki kemampuan yang baik dalam melakukan segmentasi objek, citra butir mineral menghadirkan tantangan tersendiri berupa tumpang tindih (\textit{occlusion}) antarbutir yang sering terjadi. Untuk mengatasi permasalahan tersebut, penelitian ini mengusulkan penerapan teknik \textit{amodal instance segmentation}, di mana model dilatih untuk mengidentifikasi bentuk utuh dari setiap butir mineral kasiterit meskipun sebagian areanya tertutup oleh butir lainnya \cite{FoodMaskRCNN10}.
+
+Untuk mengukur performa model yang diusulkan, evaluasi dilakukan menggunakan metrik standar \textit{COCO} yang meliputi \textit{Average Precision} (AP) dan \textit{Intersection over Union} (IoU) \cite{MaskRcnnIEEE11}. \textit{Intersection over Union} (IoU) digunakan untuk mengukur tingkat ketepatan tumpang tindih antara area segmentasi hasil prediksi dengan area segmentasi sebenarnya. Sementara itu, \textit{Average Precision} (AP) merupakan rata-rata presisi yang dihitung pada berbagai ambang batas IoU dan menilai keseimbangan antara tingkat presisi dan \textit{recall} model. Hasil evaluasi ini digunakan sebagai acuan dalam penilaian kinerja model, analisis performa segmentasi, serta sebagai dasar perbaikan dan pengembangan penelitian serupa di masa mendatang \cite{OreSegmentation2}. \par
+
+\section{Rumusan Masalah} \label{I.Rumusan Masalah}
+Berdasarkan latar belakang yang telah diuraikan, dapat diidentifikasi beberapa rumusan masalah pada penelitian ini, di antaranya :
+
+\begin{enumerate}[noitemsep]
+	\item Bagaimana merancang dan mengembangkan model identifikasi berbasis \textit{Mask} R-CNN yang dapat melakukan segmentasi mineral kasiterit pada citra mikroskop dan mengatasi oklusi antar butir melalui teknik \textit{amodal instance segmentation}?
+	\item Bagaimana mengevaluasi performa model \textit{Mask} R-CNN menggunakan metrik AP dan IoU dalam mengidentifikasi mineral kasiterit dari citra mikroskop?
+\end{enumerate}
+
+\section{Tujuan Penelitian} \label{I.Tujuan}
+Berdasarkan rumusan masalah yang telah diuraikan, penelitian ini memiliki tujuan sebagai berikut:
+
+\begin{enumerate}[noitemsep]
+	\item Menghasilkan model identifikasi berbasis \textit{Mask} R-CNN yang dapat melakukan segmentasi mineral  kasiterit pada citra mikroskop serta robust terhadap oklusi melalui teknik \textit{amodal instance segmentation}.
+	\item Melakukan pengujian dan analisis untuk mengetahui hasil performa model \textit{Mask} R-CNN menggunakan metrik AP untuk menilai tingkat ketepatan klasifikasi area mineral dan IoU untuk mengukur akurasi tumpang tindih antara area segmentasi hasil prediksi dengan area sebenarnya dalam mengidentifikasi mineral kasiterit dari citra mikroskop.
+\end{enumerate}
+
+\section{Batasan Masalah} \label{I.Batasan}
+Batasan masalah dalam penelitan ini dibuat untuk  menghindari penelitian keluar dari fokus dan memastikan pencapaian tujuan yang realistis. Adapun batasan-batasan dalam penelitian ini adalah sebagai berikut:
+
+\begin{enumerate}[noitemsep]
+	\item Penelitian ini hanya berfokus pada identifikasi mineral kasiterit (\senyawatin) dan tidak mencakup identifikasi mineral ikutan lainnya seperti ilmenit, kuarsa, zirkon, rutil, atau monasit.
+	\item Dataset yang digunakan sebanyak 142 citra mikroskop trinokuler yang bersumber  dari Laboratorium Eksplorasi PT. Timah Tbk yang berlokasi di Kota Pangkalpinang, Bangka Belitung.
+	\item Citra butir mineral kasiterit yang digunakan ber-ekstensi *.jpg.
+	% mencakup 7664 butir mineral kasiterit.
+	% sebanyak 1053 citra mikroskop dan 
+	\item Proses anotasi data dilakukan menggunakan perangkat lunak LabelMe with SAM dan tidak mengeksplorasi tools anotasi lainnya \cite{Wada_Labelme_Image_Polygonal}.
+\end{enumerate}
+
+\section{Manfaat Penelitian} \label{I.Manfaat}
+Penelitian ini diharapkan dapat memberikan manfaat bagi berbagai pihak, antara lain:
+
+\begin{enumerate}[noitemsep]
+	\item Mengetahui mineral kasiterit secara otomatis dari citra mikroskop menggunakan teknologi \textit{deep learning}.
+	\item Meningkatkan efisiensi dalam proses identifikasi mineral kasiterit di laboratorium.
+	\item Memberikan fondasi untuk pengembangan model identifikasi mineral lainnya seperti ilmenit, kuarsa, zirkon, rutil, dan monasit dalam penelitian selanjutnya.
+	\item Menjadi referensi bagi penelitian selanjutnya yang berkaitan dengan penerapan teknologi \textit{deep learning} dalam bidang geologi dan pertambangan.
+\end{enumerate}
+
+\section{Sistematika Penulisan} \label{I.Sistematika}
+Sistematika penulisan berisi pembahasan apa yang akan ditulis disetiap Bab. Sistematika pada umumnya berupa paragraf yang setiap paragraf mencerminkan bahasan setiap Bab. \par
+
+\subsection{Bab I Pendahuluan}
+Bab ini berisi pengantar penelitian yang menjabarkan latar belakang, rumusan masalah, tujuan penelitian, batasan masalah, manfaat penelitian, serta sistematika penulisan. \par
+
+\subsection{Bab II Tinjauan Pustaka}
+Bab ini membahas mengenai tinjauan pustaka dari penelitan terdahulu dan dasar teori yang berkaitan dengan penelitian ini.
+
+\subsection{Bab III Metodologi Penelitian}
+Bab ini berisikan penjelasan alur kerja sistem, alat dan data yang digunakan, metode yang digunakan, dan rancangan pengujian.
+
+\subsection{Bab IV Hasil dan Pembahasan}
+Bab ini membahas hasil implementasi dan pengujian dari penelitian yang dilakukan, serta analisis dan evaluasi yang dapat dipetik dari hasil.
+
+\subsection{Bab V Kesimpulan dan Saran}
+Bab ini membahas kesimpulan dari hasil penelitian dan juga saran untuk penelitian selanjutnya.

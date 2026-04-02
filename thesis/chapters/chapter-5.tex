@@ -1,0 +1,25 @@
+\newpage
+\chapter{KESIMPULAN DAN SARAN} \label{Bab V}
+
+\section{Kesimpulan} \label{V.Kesimpulan}
+Berdasarkan hasil penelitian yang telah dilakukan, dapat diambil beberapa kesimpulan sebagai berikut.
+
+\begin{enumerate}[noitemsep]
+    \item Penelitian ini berhasil merancang dan mengembangkan model identifikasi berbasis \textit{Mask} R-CNN yang dapat melakukan segmentasi mineral kasiterit pada citra mikroskop dan mengatasi oklusi antar butir melalui teknik \textit{amodal instance segmentation}. Berdasarkan hasil evaluasi kuantitatif, model \textit{pre-trained Mask} R-CNN ResNet50 FPN V1 dengan pendekatan \textit{amodal} dan \textit{optimizer Adam} menunjukkan performa terbaik dengan nilai \APrangefiftyy sebesar 0{,}458 serta nilai \IoUrangefiftyy yang stabil dan tinggi sebesar 0{,}915. Temuan ini diperkuat oleh hasil pengamatan visual, di mana model V1 \textit{amodal} mampu memisahkan butir kasiterit yang saling bersebelahan dan tetap mendeteksi objek kasiterit yang teroklusi oleh latar belakang, seperti penanda skala pada citra mikroskop. Sebaliknya, meskipun model \textit{pre-trained Mask} R-CNN ResNet50 FPN V2 dengan pendekatan \textit{standard} dan \textit{optimizer} SGD memiliki akurasi deteksi yang baik, model ini cenderung mengalami \textit{overprediction} pada kasiterit yang saling menutupi serta gagal mendeteksi kasiterit yang teroklusi oleh latar belakang. Dengan demikian, pendekatan \textit{amodal instance segmentation} terbukti lebih efektif dan andal untuk identifikasi kasiterit pada citra mikroskop dengan tingkat oklusi yang kompleks.
+    \item Penelitian ini berhasil mengevaluasi performa model \textit{Mask} R-CNN dalam mengidentifikasi mineral kasiterit pada citra mikroskop menggunakan metrik \textit{Average Precision} (\APrangefiftyy) dan \textit{Intersection over Union} (\IoUrangefiftyy) sebagai indikator utama. Evaluasi dilakukan secara sistematis melalui skema \textit{k-fold cross validation} untuk memperoleh hasil yang representatif dan terukur. Berdasarkan nilai rata-rata hasil evaluasi, diperoleh dua konfigurasi model dengan performa terbaik, yaitu model \textit{pre-trained Mask} R-CNN ResNet50 FPN V1 dengan pendekatan \textit{amodal} dan \textit{optimizer Adam}, serta model \textit{pre-trained Mask} R-CNN ResNet50 FPN V2 dengan pendekatan \textit{standard} dan \textit{optimizer SGD}. Model V1 \textit{amodal} menghasilkan nilai \APrangefiftyy sebesar 0{,}458 dan \IoUrangefiftyy sebesar 0{,}915, sedangkan model V2 \textit{standard} memperoleh nilai \APrangefiftyy sebesar 0{,}449 dan \IoUrangefiftyy sebesar 0{,}915. Hasil ini menunjukkan bahwa metrik AP dan IoU mampu memberikan gambaran yang komprehensif terhadap kinerja deteksi dan kualitas segmentasi, serta menegaskan pentingnya evaluasi kuantitatif yang didukung oleh analisis visual pada kondisi oklusi.
+\end{enumerate} 
+
+
+% Hasil dari pengembangan nya menghasilkan dua model terbaik yakni model \textit{pre-trained} \textit{Mask} R-CNN ResNet50 FPN V1 dengan variasi model \textit{Amodal} dan \textit{optimizer} \textit{Adam} dan model \textit{pre-trained} \textit{Mask} R-CNN ResNet50 FPN V2 dengan variasi model \textit{Standard} dan \textit{optimizer} SGD \par
+
+\section{Saran} \label{V.Saran}
+Berdasarkan hasil penelitian yang telah dilakukan, terdapat beberapa saran yang dapat diberikan adalah sebagai berikut. \par
+\begin{enumerate}[noitemsep]
+    \item Menerapkan jenis mineral lain (bukan hanya 1 kelas kasiterit) untuk membandingkan performa deteksi pada kasus \textit{amodal} atau objek yang terjadi oklusi guna memperoleh hasil yang lebih optimal.
+    \item Jika hanya kasiterit saja, tetap melakukan segmentasi di mineral lain untuk untuk membandingkan performa deteksi pada kasus \textit{amodal} atau objek yang terjadi oklusi guna memperoleh hasil yang lebih optimal. 
+    \item Menerapkan model segmentasi yang dapat bekerja secara langsung \textit{real-time} dari mikroskop tanpa perlu melakukan pengambilan foto terlebih dahulu.
+    \item Bagaimana menerapkan model agar prediksi dari model tidak terjadi \textit{overprediction} sehingga menghasilkan prediksi yang lebih akurat.
+    \item Menerapkan jenis kasiterit yang spesifik berdasarkan ciri visual, seperti warna, tekstur, atau bentuk kristal untuk mendapatkan hasil yang lebih detail, contoh kasiterit khusus dari bangka barat atau kasiterit laut tempilang.
+    \item Pada proses segmentasi data, menerapkan 2 dataset terpisah yakni dataset khusus \textit{amodal} dan \textit{modal}, untuk dapat melihat hasil perbedaan \textit{output} dari hasil penerapan teknik \textit{amodal instance segmentation}.
+
+\end{enumerate}

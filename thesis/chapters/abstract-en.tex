@@ -1,0 +1,22 @@
+\clearpage
+\phantomsection% 
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\thispagestyle{fancy}
+
+\begin{center}
+	\large \bfseries \MakeUppercase{Abstract}\\
+	% \normalsize \normalfont {\thetitleEN}\\
+	% \normalsize \normalfont {\theauthor}\\
+	\bigskip
+	
+	\normalsize \normalfont \justifying \singlespacing
+	The identification of cassiterite minerals at the Exploration Laboratory of PT. Timah Tbk. currently still relies on the conventional method of Grain Counting Analysis (GCA), which is performed manually using a microscope. This method has limitations such as being time-consuming, subjective, and prone to visual fatigue, which leads to inconsistent calculations. This study aims to design and develop a \textit{Mask} R-CNN based discovery model that can segment cassiterite minerals using the \textit{amodal instance segmentation} technique that is able to overcome the problem of occlusion between mineral grains in microscope images. The selection of \textit{Mask} R-CNN is based on its ability to perform precise detection and \textit{instance segmentation} on images with complex backgrounds, while the \textit{amodal} approach allows the model to predict the entire shape of an object even if it is partially covered. The dataset used consists of 142 trinocular microscope images from the Exploration Laboratory of PT. Timah Tbk. which were annotated and validated by one of the analyst teams at the Exploration Laboratory of PT. Timah Tbk. This study trained two pre-trained Mask R-CNN ResNet50 FPN V1 and V2 models, with two types of standard and amodal models and two variations of SGD and Adam optimizers. Model performance was evaluated using the Average Precision (AP) and Intersection over Union (IoU) metrics through a k-fold cross validation scheme. The results showed that the pre-trained Mask R-CNN ResNet50 FPN V1 model with the \textit{amodal} approach and \textit{Adam optimizer} provided the best performance with a value of \APrangefiftyy of 0{,}458 and \IoUrangefiftyy of 0{,}915, demonstrating its ability to accurately detect and segment cassiterite despite occlusion between mineral grains. Test results show that the \textit {amodal} Mask R-CNN ResNet50 FPN V1 with \textit{Adam optimizer} produces better segmentation performance with high and consistent \IoUrangefiftyy values, as well as prediction results with stable \APrangefiftyy values, while other configurations still show a tendency toward \textit{overprediction}, especially under occlusion conditions. This study shows that the application of the \textit{amodal instance segmentation} approach is effective and reliable for identifying cassiterite minerals in microscope images with complex occlusion levels. \par
+
+
+    \vspace{20pt}
+	\raggedright\textbf{Keywords: Mineral Identification, Cassiterite, Mask R-CNN, Amodal Instance Segmentation, Microscope Images}
+	
+	\vfill
+	
+\end{center}
+\clearpage
