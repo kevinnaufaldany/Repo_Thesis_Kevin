@@ -56,7 +56,7 @@ Dependencies are defined in code/requirements.txt, including:
 1. Clone the repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/mctosima/Repo_Thesis_Kevin.git
 cd Repo_TA_Kevin
 ```
 
